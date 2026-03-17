@@ -14,14 +14,6 @@ Perfect for showing loading states in modern iOS apps.
 
 ---
 
-## 📸 Preview
-
-<p align="center">
-  <img src="Screenshots/demo.gif" width="220"/>
-</p>
-
----
-
 ## 📦 Installation
 
 ### Swift Package Manager
