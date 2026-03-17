@@ -3,12 +3,17 @@
 
 import SwiftUI
 
-struct LoadingModifier: ViewModifier {
+public struct LoadingModifier: ViewModifier {
     @Environment(\.colorScheme) var colorScheme
     var isLoading: Bool
     var loadingText: String
+    
+    public init(isLoading: Bool, loadingText: String) {
+        self.isLoading = isLoading
+        self.loadingText = loadingText
+    }
 
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         ZStack {
             content
                 .disabled(isLoading) // Disable interactions when loading
@@ -46,7 +51,7 @@ struct LoadingModifier: ViewModifier {
     }
 }
 
-extension View {
+public extension View {
     func loadingIndicator(isLoading: Bool,message: String = "") -> some View {
         self.modifier(LoadingModifier(isLoading: isLoading, loadingText: message))
     }
